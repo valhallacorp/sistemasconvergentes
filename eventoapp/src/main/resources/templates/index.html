@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+<head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <title>Eventos App</title>   
+</head>
+	  
+
+
+<body>
+	<nav>
+		<div class="nav-wrapper" style="background-color: grey">
+		    <a class="brand-logo" style="padding-left: 5px">Lista de Eventos</a>
+		    <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      <li><a class="waves-effect waves-light btn" href="cadastrarEvento"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a>
+		      <li><a href="">sass</a></li>
+		      <li><a href="">sass</a></li>
+		    </ul>
+		 </div>
+	</nav>
+	
+	<table class="container highlight collection" >
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Local</th>
+				<th>Data</th>
+				<th>Horario</th>
+			</tr>
+		</thead>
+		<tbody >
+			<tr th:each="evento : ${eventos}">
+				<div class="row" >
+					<td class="collection-item avatar"><img src="materialize/images/eu.jpg" class="circle"><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span class="title" th:text="${evento.nome}"></span></a></td>
+					<td><span th:text="${evento.local}"></span></td>
+					<td><span th:text="${evento.data}"></span></td>
+					<td><span th:text="${evento.horario}"></span></td>
+				</div>
+			</tr>
+		</tbody>
+	</table>
+	<!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
+</body>
+
+
+</html>
