@@ -1,0 +1,19 @@
+version: '3'
+volumes:
+  data:
+services:
+  eventosapp:
+    restart: always
+    build: ./
+    container_name: ws-docker
+    ports:
+      - "8081:8086"
+    depends_on:
+      - mysql-docker
+  mysql-docker:
+    restart: always
+    image: mysql:5.6
+    container_name: mysql-docker-eventosapp
+    environment:
+      - MYSQL_ROOT_PASSWORD=Lucas*856422
+      - MYSQL_DATABASE=eventosapp

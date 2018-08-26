@@ -1,0 +1,7 @@
+com/eventoapp/EventoappApplication.class
+com/eventoapp/model/Evento.class
+com/eventoapp/repository/ConvidadoRepository.class
+com/eventoapp/model/Convidado.class
+com/eventoapp/repository/EventoRepository.class
+com/eventoapp/controller/EventoController.class
+com/eventoapp/controller/IndexController.class
