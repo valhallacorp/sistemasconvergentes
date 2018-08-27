@@ -1,0 +1,39 @@
+<div materialize class="container">
+  <div class="col-md-12">
+     <h3 class="text-center">Cadastrar</h3>
+   <form>
+      <div class="row">
+          <div class="input-field col s4">
+            <input [(ngModel)]='evento.codigo' id="codigo" type="text" class="validate">
+            <label for="codigo">Codigo:</label>
+          </div>
+      </div>
+       <div class="row">
+           <div class="input-field col s4">
+             <input [(ngModel)]='evento.nome' id="nome" type="text" class="validate">
+             <label for="nome">Nome:</label>
+           </div>
+       </div>
+       <div class="row">
+           <div class="input-field col s2">
+             <input [(ngModel)]='evento.local' id="local" type="text" class="validate">
+             <label for="local">Local:</label>
+           </div>
+       </div>
+       <div class="row">
+        <div class="input-field col s2">
+          <input [(ngModel)]='evento.data' id="data" type="text" class="validate">
+          <label for="data">Data:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s2">
+          <input [(ngModel)]='evento.horario' id="horario" type="text" class="validate">
+          <label for="horario">Horário:</label>
+        </div>
+      </div>
+     <button class="btn btn-success light-green accent-2 black-text" (click)="createEvento(evento)">Criar Evento</button>
+   </form>
+   </div>
+   </div>
+ 
